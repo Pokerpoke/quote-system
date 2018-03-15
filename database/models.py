@@ -41,7 +41,9 @@ class Quotes(models.Model):
     """
     报价
     """
-    requirement = models.OneToOneField('Orders',
-                                       on_delete=models.CASCADE)
+    # requirement = models.OneToOneField('Orders',
+    #                                    on_delete=models.CASCADE)
+    project_num = models.IntegerField(unique=True,
+                                      verbose_name='项目编号')
     unit_price = models.IntegerField(verbose_name='单价')
     total_price = models.IntegerField(verbose_name='总价')
